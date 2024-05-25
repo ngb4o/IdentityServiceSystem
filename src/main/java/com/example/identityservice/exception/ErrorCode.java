@@ -1,5 +1,11 @@
 package com.example.identityservice.exception;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
+
+@Getter
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public enum ErrorCode {
     UNCATEGORIZED_EXCEPTION(9999, "Uncategorized error"),
     INVALID_KEY(1001, "Uncategorized error"),
@@ -13,14 +19,7 @@ public enum ErrorCode {
         this.message = message;
     }
 
-    private int code;
-    private String message;
+     int code;
+     String message;
 
-    public int getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
 }
